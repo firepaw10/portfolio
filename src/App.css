@@ -1,27 +1,41 @@
 .App {
   text-align: center;
-}
 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+a.socials {
+    margin: 0 .2em;
+}
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    background-image: url('./assets/img/header-img.svg');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .App-link {
@@ -35,4 +49,70 @@
   to {
     transform: rotate(360deg);
   }
+}
+input, button,textarea {
+    margin-top:.5em;
+    margin-bottom:.5em;
+}
+img.contactBackground {
+    max-width: 100%;
+    height:auto;
+}
+img.skills-background {
+    width: 100%;
+    height: auto;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+    transform: rotate(45deg);
+    background-color: #fff;
+    height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+    transform: translateY(8px) rotate(-45deg);
+    background-color: #fff;
+    height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    border-color: transparent;
+}
+
+.banner {
+    margin-top: 0;
+    padding: 260px 0 100px 0;
+    background-image: url('./assets/img/banner-bg.png');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+}
+
+.banner .tagline {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 8px 10px;
+    background: #12c2e9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.banner h1 { 
+    font-size: 65px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+
+body {
+    background: #8360c3; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

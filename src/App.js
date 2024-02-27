@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 
+// Components
+import { NavBar } from './components/NavBar';
+import { NewMotion } from './components/Animation';
+import { ModalPopup } from './components/Modal';
+import { Banner } from './components/Banner';
+import { Skills } from './components/Skills';
+import { Contact } from './components/Contact';
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+        <NewMotion></NewMotion>
+        <NavBar></NavBar>
+        <Banner></Banner>
+        <Skills></Skills>
+        <Contact></Contact>
+        <ModalPopup title="Modal Test!" body="Woohoo, you are reading this text in a modal!"></ModalPopup>
     </div>
   );
 }
