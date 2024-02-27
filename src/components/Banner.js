@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faEnvelope, faRightLong } from '@fortawesome/free-solid-svg-icons'
+import headerImg from "../assets/img/header-img.svg";
+
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
@@ -42,12 +44,13 @@ export const Banner = () => {
         <section className="banner" id="home">
             <Container>
                 <Row className="align-items-center">
-                    <Col >
+                    <Col md={6}>
                         <span className="tagline">Welcome to my Portfolio.</span>
                         <h1>{`Hi! My name is Grant. I'm a `}<span className="wrap">{text}</span></h1>
                         <p>About me and how great I am...</p>
                         <button className="btn btn-dark" onClick={() => { console.log('test') }}>Let's Connect <FontAwesomeIcon icon={faRightLong }></FontAwesomeIcon></button>
                     </Col>
+                    <Col md={6}><img className="banner-col2" src={headerImg }></img></Col>
                 </Row>
             </Container>
         </section>
