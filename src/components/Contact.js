@@ -49,7 +49,7 @@ export const Contact = () => {
                                 <Col sm={6} className="px-1">
                                     <input className="form-control" type="tel" value={formDetails.phone} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
                                 </Col>
-                                <Col sm={6} className="px-1">
+                                <Col lg={12} className="px-1">
                                     <textarea row="6" class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" value={formDetails.message} placeholder="Messge" onChange={(e) => onFormUpdate('message', e.target.value)} />
                                     <button className="btn btn-dark" type="submit"><span>{buttonText}</span></button>
                                 </Col>
