@@ -20,6 +20,7 @@ export const Banner = () => {
 
         return () => { clearInterval(ticker)};
     }, [text]);
+    // [text] is the dependency, and thus any change to it, will trigger this useEffect function
 
     const tick = () => {
         let i = loopNum % toRotate.length;
@@ -28,13 +29,13 @@ export const Banner = () => {
 
         setText(updatedText);
         if(isDeleting) {
-            setDelta(prevDelta => prevDelta / 2);
+            setDelta(prevDelta => prevDelta / 2); // speed up the rate that the characters are getting deleted
         }
         if (!isDeleting && updatedText === fullText) {
-            setIsDeleting(true);
+            setIsDeleting(true); // if the full text was written, begin deleting
             setDelta(period);
         } else if (isDeleting && updatedText === '') {
-            setIsDeleting(false);
+            setIsDeleting(false); // if all text was deleted, set IsDeleting to false, and begin writing the next element's characters
             setLoopNum(loopNum + 1);
             setDelta(350);
         }
