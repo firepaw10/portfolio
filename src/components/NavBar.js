@@ -57,7 +57,7 @@ export const NavBar = () => {
                         <Nav.Link href="#home" id='home' className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('home')}}>Home</Nav.Link>
                         <Nav.Link href="#skills" id='skills' className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('skills')} }>Skills</Nav.Link>
                         <Nav.Link href="#projects" id='projects' className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('projects')}}>Projects</Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown" show={show} onMouseEnter={showDropDown} onMouseLeave={hideDropDown} onClick={toggleNavDD}>
+                        <NavDropdown className={show || navDDToggled ? "selected":""} title="Dropdown" id="basic-nav-dropdown" show={show} onMouseEnter={showDropDown} onMouseLeave={hideDropDown} onClick={toggleNavDD}>
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
                                 Another action

@@ -10,9 +10,11 @@
 }
 
 .example-style, .dropdown-menu.show {
-    animation: fade-in 2s;
+    animation: fade-in 1s;
 }
-
+div[aria-labelledby="basic-nav-dropdown"] {
+    top:94% !important;
+}
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -21,7 +23,11 @@
         opacity: 100;
     }
 }
-
+div > .selected, div > a:hover, div > a.dropdown-item:hover {
+    background-color: chartreuse;
+    border-radius: 5px;
+    animation: fade-in 0.5s;
+}   
 .App-logo {
   height: 40vmin;
   pointer-events: none;
