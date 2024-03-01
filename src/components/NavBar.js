@@ -10,7 +10,22 @@ import { faCoffee, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
-    
+    const [show, setShow] = useState(false);
+    const [navDDToggled , setNavDDToggled] = useState(false);
+    const showDropDown = (e) => {
+        setShow(true);
+    }
+    const hideDropDown = e => {
+        if (navDDToggled)
+        {
+            return;
+        }  
+        setShow(false);
+    }
+    const toggleNavDD = e => {
+        setNavDDToggled(!navDDToggled);
+    }
+
     useEffect(() => {
         const onScroll = () => {
             if (window.scrollY > 50) {
@@ -30,7 +45,7 @@ export const NavBar = () => {
     }
     return (
         <Navbar expand="lg" className={scrolled ? "scrolled": "" }>
-            <Container>
+            <Container >
                 <Navbar.Brand href="#home">
                     <img src={''} alt="Logo" />
                 </Navbar.Brand>
@@ -42,7 +57,7 @@ export const NavBar = () => {
                         <Nav.Link href="#home" id='home' className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('home')}}>Home</Nav.Link>
                         <Nav.Link href="#skills" id='skills' className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('skills')} }>Skills</Nav.Link>
                         <Nav.Link href="#projects" id='projects' className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('projects')}}>Projects</Nav.Link>
-                        {/*<NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                        <NavDropdown title="Dropdown" id="basic-nav-dropdown" show={show} onMouseEnter={showDropDown} onMouseLeave={hideDropDown} onClick={toggleNavDD}>
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
                                 Another action
@@ -52,7 +67,7 @@ export const NavBar = () => {
                             <NavDropdown.Item href="#action/3.4">
                                 Separated link
                             </NavDropdown.Item>
-                        </NavDropdown>*/}
+                        </NavDropdown>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">

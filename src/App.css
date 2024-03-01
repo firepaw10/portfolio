@@ -8,6 +8,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.example-style, .dropdown-menu.show {
+    animation: fade-in 2s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

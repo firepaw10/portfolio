@@ -22,12 +22,13 @@ export const Contact = () => {
         })
     }
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+            e.preventDefault();
+            console.log("submitted");
     }
 
     return ( 
-        <section clsasName="contact" id="connect">
+        <section className="contact" id="connect">
             <Container>
                 <Row className="align-items-center">
                     <Col md={6 }>
@@ -50,7 +51,7 @@ export const Contact = () => {
                                     <input className="form-control" type="tel" value={formDetails.phone} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
                                 </Col>
                                 <Col lg={12} className="px-1">
-                                    <textarea row="6" class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" value={formDetails.message} placeholder="Messge" onChange={(e) => onFormUpdate('message', e.target.value)} />
+                                    <textarea row="6" className="form-control" id="exampleFormControlTextarea1" rows="3" type="text" value={formDetails.message} placeholder="Messge" onChange={(e) => onFormUpdate('message', e.target.value)} />
                                     <button className="btn btn-dark" type="submit"><span>{buttonText}</span></button>
                                 </Col>
                                 {

@@ -42,8 +42,8 @@ export const Banner = () => {
     }
 
     return (
-        <section className="banner" id="home">
-            <Container>
+        <section className="banner example-style" id="home">
+            <Container className="">
                 <Row className="align-items-center">
                     <Col md={6}>
                         <span className="tagline">Welcome to my Portfolio.</span>
