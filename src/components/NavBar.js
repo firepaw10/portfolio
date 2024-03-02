@@ -40,6 +40,7 @@ export const NavBar = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+
     const onUpdateActiveLink = (curLink) => {
         setActiveLink(curLink);
     }
@@ -52,7 +53,7 @@ export const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" >
                     <span className="navbar-toggler-icon"></span>
                 </Navbar.Toggle>
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse id="basic-navbar-nav" className="customnav">
                     <Nav className="me-auto">
                         <Nav.Link href="#home" id='home' className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('home')}}>Home</Nav.Link>
                         <Nav.Link href="#skills" id='skills' className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('skills')} }>Skills</Nav.Link>
